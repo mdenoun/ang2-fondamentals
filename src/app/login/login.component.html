@@ -1,0 +1,51 @@
+
+<div class="container">
+  <div class="row">
+
+    <div class="main">
+
+      <h3>Please Log In, or <a href="#">Sign Up</a></h3>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+        </div>
+      </div>
+      <div class="login-or">
+        <hr class="hr-or">
+        <span class="span-or">or</span>
+      </div>
+
+      <form id="loginFormId" role="form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="usernameEmail">Username or email</label>
+          <input type="text" class="form-control" id="usernameEmail" [formControl]="usernameEmail"
+                 [ngClass]="{'error-field': !usernameEmail.pristine && usernameEmail?.errors}">
+          <small><div *ngIf="!usernameEmail.pristine && usernameEmail?.errors?.required" class="error-text">you must enter an email</div></small>
+          <small><div *ngIf="!usernameEmail.pristine && usernameEmail?.errors?.email" class="error-text">email invalid</div></small>
+        </div>
+        <div class="form-group">
+          <a class="pull-right" href="#">Forgot password?</a>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [formControl]="password"
+                 [ngClass]="{'error-field': !password.pristine && password?.errors}">
+          <br>
+          <small>8 characters min.</small>
+          <small><div *ngIf="!password.pristine && password?.errors?.required" class="error-text">you must enter a pwd</div></small>
+          <small><div *ngIf="password?.errors?.minlength" class="error-text">passwword must be at least 6 characters</div></small>
+          <!--div>{{ password.errors | json }}</div-->
+        </div>
+        <div class="checkbox pull-right">
+          <label><input type="checkbox">Remember me </label>
+        </div>
+        <button type="submit" class="btn btn btn-primary">
+          Log In
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+</div>
