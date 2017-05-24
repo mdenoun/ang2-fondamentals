@@ -24,7 +24,6 @@
           <input type="text" class="form-control" id="usernameEmail" [formControl]="usernameEmail"
                  [ngClass]="{'error-field': !usernameEmail.pristine && usernameEmail?.errors}">
           <small><div *ngIf="!usernameEmail.pristine && usernameEmail?.errors?.required" class="error-text">you must enter an email</div></small>
-          <small><div *ngIf="!usernameEmail.pristine && usernameEmail?.errors?.email" class="error-text">email invalid</div></small>
         </div>
         <div class="form-group">
           <a class="pull-right" href="#">Forgot password?</a>
