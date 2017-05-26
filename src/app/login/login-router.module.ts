@@ -5,11 +5,21 @@
 import { NgModule } from "@angular/core";
 import { LoginComponent } from "./login/login.component";
 import { Routes, RouterModule } from '@angular/router';
+import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
+import {RegistrationComponent} from "./registration/registration.component";
 
 const routes:Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'recovery',
+    component: PasswordRecoveryComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
   }
 ];
 
@@ -17,4 +27,4 @@ const routes:Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthRouterModule {}
+export class LoginRouterModule {}
