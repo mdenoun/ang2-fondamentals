@@ -9,6 +9,8 @@ import {IAuthUser} from "./auth.types";
 export class AuthAction {
   static LOGIN='LOGIN';
   static LOGIN_SUCCESS='LOGIN_SUCCESS';
+  static LOGIN_ERROR   = 'LOGIN_ERROR';
+
 
   login(userValue):IPayloadAction<IAuthUser, any> {
     return {type:AuthAction.LOGIN, payload:userValue};

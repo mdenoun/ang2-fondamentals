@@ -1,4 +1,7 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import {DashboardService} from './/dashboard.service';
+import {select} from "@angular-redux/store";
+import {IMenu} from "./dashboard.types";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +9,16 @@ import {Component, OnInit} from "@angular/core";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
+  public menus:IMenu[];
+  //public user:User;
+  @select('user') public user;
+  constructor(private service: DashboardService) {
+    this.menus = this.service.getMenus();
+    //ToDo cleanup
+    //this.user = this.service.getUser();
+  }
+
+  ngOnInit() {
+  }
 
 }

@@ -3,7 +3,9 @@
  */
 import {authReducer} from "./auth/auth.reducer";
 import {combineReducers} from "redux";
+import {profileReducer} from "./profile/profile.reducer";
 
-export const rootReducer= combineReducers({//Will add more reducer down the road
-  user: authReducer
+export const rootReducer= combineReducers({
+  user: authReducer,
+  profile: profileReducer
 });
