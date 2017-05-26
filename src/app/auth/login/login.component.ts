@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from "@angular/core";
-import {AuthService} from "./auth/auth.service";
+import {AuthService} from "../auth.service";
 import {FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
 
 @Component({
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
     this.checkError({control:this.usernameEmail, label:'usernameEmail'});
     this.checkError({control:this.password, label:'password'});
     if(this.loginForm.valid) {
+      console.log(this.loginForm.value);
       this.auth.login(this.loginForm.value);
     }
   }
