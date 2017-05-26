@@ -4,9 +4,8 @@
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import {AuthGuardService} from "./auth/auth-guard.service";
-import {AuthModule} from "./auth/auth.module";
-import {AuthService} from "./auth/auth.service";
+import {AuthGuardService} from "./auth-guard.service";
+import {AuthService} from "./auth.service";
 
 const routes:Routes = [
   {
@@ -16,7 +15,7 @@ const routes:Routes = [
   },
   {
     path: 'login',
-    loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './login/login.module#LoginModule'
   },
   {
     path: 'dashboard',
