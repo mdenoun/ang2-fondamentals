@@ -1,0 +1,14 @@
+.dashboard-panel {
+  /* it works like a charm, not really sure why without width 100 % the width was changing depending on cliking on nav menu, will look at it later */
+  position: absolute; /* needs absolute for percentage height to take effect */
+  height: 100%; /* needed to extend the nav menus and for the overflow for the main panel */
+  width: 100%; /* when clicking on events menu window shrink */
+  margin-right: 5px; /* needs to see the scroll*/
+}
+.navigation-panel {
+  height: 100%;
+}
+.main-panel {
+  height: 100%; /* need to set the height for the overflow to work */
+  overflow: auto;
+}

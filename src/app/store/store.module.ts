@@ -6,13 +6,14 @@ import {NgRedux, NgReduxModule} from "@angular-redux/store";
 import {rootReducer} from "./root.reducers";
 import {AuthMiddleware} from "./auth/auth.middleware";
 import {IAppState} from "./root.types";
+import {ProfileMiddleware} from "./profile/profile.middleware";
 
 @NgModule({
   imports: [NgReduxModule],
-  providers:[AuthMiddleware]
+  providers:[AuthMiddleware, ProfileMiddleware]
 })
 export class StoreModule {
-  constructor(ngRedux: NgRedux<IAppState>, authMdl:AuthMiddleware){
-    ngRedux.configureStore(rootReducer, {}, [authMdl.middleware]);
+  constructor(ngRedux: NgRedux<IAppState>, authMdl:AuthMiddleware, profileMdl:ProfileMiddleware){
+    ngRedux.configureStore(rootReducer, {}, [authMdl.middleware, profileMdl.middleware]);
   }
 }

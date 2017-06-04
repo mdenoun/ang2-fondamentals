@@ -1,0 +1,23 @@
+<div [formGroup]="languages">
+  <div class="form-group">
+    <label>Languages in which you are confident to hold a speech</label>
+    <div class="row form-group">
+      <div class="col-md-6 col-sm-6">
+        <label>Primary Language </label><input placeholder="Select" type="text" class="form-control"
+                                       formControlName="primary" [value]="languagesModel?.primary">
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <label>Secondary Language </label><input placeholder="Select" type="text" class="form-control"
+                                         formControlName="secondary" [value]="languagesModel?.secondary">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-6 col-sm-6">
+        <label>Other</label><input placeholder="Select" type="text" class="form-control" formControlName="third" [value]="languagesModel?.third">
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <label>Other</label><input placeholder="Select" type="text" class="form-control" formControlName="fourth" [value]="languagesModel?.fourth">
+      </div>
+    </div>
+  </div>
+</div>

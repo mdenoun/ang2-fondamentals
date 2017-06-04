@@ -6,6 +6,7 @@ import {LoginRouterModule} from "./login-router.module";
 import {LoginService} from "./login.service";
 import {PasswordRecoveryComponent} from "./password-recovery/password-recovery.component";
 import {RegistrationComponent} from "./registration/registration.component";
+import {AuthService} from "../auth.service";
 
 @NgModule({
   imports:[
@@ -15,6 +16,6 @@ import {RegistrationComponent} from "./registration/registration.component";
   ],
   declarations:[LoginComponent, PasswordRecoveryComponent, RegistrationComponent],
   exports: [LoginComponent, PasswordRecoveryComponent, RegistrationComponent],
-  providers: [LoginService]
+  providers: [LoginService, AuthService]
 })
 export class LoginModule {}

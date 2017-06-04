@@ -8,7 +8,6 @@ export interface IAuthUser {
   password?: string;
   name?: string,
   file?: string,
-  email?: string,
-  Name?: string,
-  Surname?: string
+  email?: string
+  surname?: string
 }

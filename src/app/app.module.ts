@@ -17,7 +17,7 @@ import {StoreModule} from "./store/store.module";
     FormsModule,
     HttpModule,
     AppRouterModule,
-    StoreModule
+    StoreModule,
   ],
   providers: [...storeActions],
   bootstrap: [AppComponent]

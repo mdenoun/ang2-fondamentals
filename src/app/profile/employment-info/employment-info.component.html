@@ -1,0 +1,12 @@
+<div [formGroup]="employmentInfo">
+  <div class="form-group">
+    <div>
+      <div formArrayName="experiences">
+        <app-experience *ngFor="let experienceCtrl of experiences.controls; let i = index;"
+                        [experience]="experienceCtrl" [index]="i"
+                        (addExperience)="addEmptyExperience()" (deleteExperience)="deleteExperience($event.index)"></app-experience>
+      </div>
+    </div>
+  </div>
+</div>
+

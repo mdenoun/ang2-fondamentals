@@ -9,9 +9,9 @@ export class Mock {
       id: 286,
       name:'Maxime',
       file:'../assets/286.jpg',
-      email: "maximedenoun73@gmail.com",
+      /*email: "maximedenoun73@gmail.com",
       Name: 'Maxime',
-      Surname: 'Denoun'
+      Surname: 'Denoun'*/
     }
   }
 }
