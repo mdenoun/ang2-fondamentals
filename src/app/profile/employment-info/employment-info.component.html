@@ -1,29 +1,10 @@
-<div [formGroup]="EmploymentInfo">
+<div [formGroup]="employmentInfo">
   <div class="form-group">
-    <div class="row display-table-row">
-      <div class="col-md-5 col-sm-11 display-table-cell">
-        <div class="col-md-12 col-sm-11" formArrayName="Company">
-          <div class="col-md-12 col-sm-11" *ngFor="let comp of Company.controls; let i = index">
-            <label>Company *</label>
-            <input type="text" placeholder="Company" class="form-control" [formControlName]="i" [id]="i">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-11 display-table-cell">
-        <div class="col-md-12 col-sm-11" formArrayName="Role">
-          <div class="row display-table-row" *ngFor="let role of Role.controls; let i = index">
-            <div class="col-md-10 col-sm-11 display-table-cell">
-              <label>Role *</label>
-              <input type="text" placeholder="Role" class="form-control" [formControlName]="i" [id]="i">
-            </div>
-            <div class="col-md-2 col-sm-1 display-table-cell">
-              <button type="button" class="form-control btn btn-default employment-btn">X</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-3 display-table-cell">
-        <button (click)="addEmptyPosition()" type="button" class="form-control btn btn-warning employment-btn">Add Company +</button>
+    <div>
+      <div formArrayName="experiences">
+        <app-experience *ngFor="let experienceCtrl of experiences.controls; let i = index;"
+                        [experience]="experienceCtrl" [index]="i"
+                        (addExperience)="addEmptyExperience()" (deleteExperience)="deleteExperience($event.index)"></app-experience>
       </div>
     </div>
   </div>

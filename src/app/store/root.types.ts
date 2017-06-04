@@ -6,6 +6,5 @@ import {IProfile} from "./profile/profile.types";
 
 export interface IAppState {
   user?: IAuthUser,
-  profile?: IProfile;
-  /*pending?: boolean*/
+  profile?: IProfile
 }

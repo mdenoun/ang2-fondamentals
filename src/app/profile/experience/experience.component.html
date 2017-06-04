@@ -1,0 +1,19 @@
+<div [formGroup]="experience" class="row form-group">
+  <div class="col-md-4 col-sm-4">
+    <label>Company *</label>
+    <input type="text" placeholder="Company" class="form-control" formControlName="company">
+  </div>
+  <div class="col-md-4 col-sm-4">
+    <label>Role *</label>
+    <input type="text" placeholder="Role" class="form-control" formControlName="role">
+  </div>
+  <div class="col-md-1 col-sm-1">
+    <label>&nbsp;</label>
+    <button (click)="deleteExperience.emit({index: index})" type="button" class="form-control btn btn-default">X</button>
+  </div>
+  <span class="col-md-3 col-sm-3" *ngIf="index === 0">
+    <label>&nbsp;</label>
+    <button (click)="addExperience.emit()" type="button" class="form-control btn btn-warning employment-btn">Add Company +</button>
+  </span>
+</div>
+

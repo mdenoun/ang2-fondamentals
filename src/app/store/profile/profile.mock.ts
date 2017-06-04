@@ -5,41 +5,41 @@ import {IProfile} from "./profile.types";
 export class ProfileMock {
   static retrievedProfile():IProfile {
     return {
-      GeneralInfo: {
+      generalInfo: {
         id: 286,
         file: '../assets/286.jpg',
-        Email: "maximedenoun173@gmail.com",
-        Name: 'Maxime1',
-        Surname: 'Denoun1',
-        AllowImageUsage: true,
-        Biography: 'This is my biography1'
+        email: "maximedenoun173@gmail.com",
+        name: 'Maxime',
+        surname: 'Denoun',
+        allowImageUsage: true,
+        biography: 'This is my biography'
       },
-      EmploymentInfo: {
-        Company: ['Tech 500', 'Tech 501' ],
-        Role: ['dev', 'public speaker']
+      employmentInfo: {
+        company: ['Tech 500', 'Tech 501' ],
+        role: ['dev', 'public speaker']
       },
-      Social: {
-        Nationality: 'Israeli1',
-        CityCountry: 'Ashdod - Israel1',
-        Phone: '0506944081',
-        Website: 'www.harbo.com1',
-        Twitter: 'I don"t have twitter1',
-        Facebook: 'I don"t have FB1',
-        Linkedin: 'I don"t have it1',
-        Git: 'https://github.com/mdenoun1',
+      social: {
+        nationality: 'Israeli',
+        cityCountry: 'Ashdod - Israel',
+        phone: '0506944081',
+        website: 'www.harbo.com',
+        twitter: 'I don"t have twitter',
+        facebook: 'I don"t have FB',
+        linkedIn: 'I don"t have it',
+        git: 'https://github.com/mdenoun',
       },
-      Languages: {
-        Primary: 'Hebrew',
-        Secondary: 'English',
-        Third: 'French',
-        Fourth: 'Chinese'
+      languages: {
+        primary: 'Hebrew',
+        secondary: 'English',
+        third: 'French',
+        fourth: 'Chinese'
       },
-      CommunityInfo: {
-        IsCommunityMember: true,
-        Community: 'Angular'
+      communityInfo: {
+        isCommunityMember: true,
+        community: 'Angular'
       },
-      Agreement: {
-        Agrees: true,
+      agreement: {
+        agrees: true,
       }
     }
   }

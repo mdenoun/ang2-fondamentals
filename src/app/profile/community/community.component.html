@@ -1,0 +1,18 @@
+<div [formGroup]="communityInfo">
+  <div class="form-group">
+    <div class="row form-group">
+      <div class="col-sm-5">
+        <label>Are you a member of communities?</label>
+        <div class="col-lg-2">
+          <label class="radio-inline"><input type="radio" value="true" formControlName="isCommunityMember" [checked]="communityModel?.isCommunityMember">Yes</label>
+          <label class="radio-inline"><input type="radio" value="false" formControlName="isCommunityMember" [checked]="communityModel?.isCommunityMember">No</label>
+        </div>
+      </div>
+      <div class="col-sm-5 pull-right">
+        <label>Which one?</label>
+        <input type="text" class="form-control" placeholder="Community name" formControlName="community" [value]="communityModel?.community">
+        <small>Separate different communities name with comma.</small>
+      </div>
+    </div>
+  </div>
+</div>

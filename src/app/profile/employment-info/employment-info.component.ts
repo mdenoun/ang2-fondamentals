@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'employment-info',
@@ -9,9 +9,9 @@ import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
 export class EmploymentInfoComponent implements OnInit {
 
   @Input()
-  public ProfileForm: FormGroup;
+  public profileForm: FormGroup;
 
-  public EmploymentInfo: FormGroup;
+  public employmentInfo: FormGroup;
 
   @Input() set employmentModel(employments) {
     if(!employments) return;
@@ -19,49 +19,56 @@ export class EmploymentInfoComponent implements OnInit {
   }
 
   constructor(private builder: FormBuilder) {
-    this.EmploymentInfo = builder.group({
-      Company: builder.array([builder.control('')]),
-      Role: builder.array([builder.control('')])
+    this.employmentInfo = builder.group({
+      experiences: builder.array([])
     })
-    //this.ProfileForm.addControl('EmploymentInfo', this.EmploymentInfo);
   }
 
   private updateEmploymentInfo(employments): void {
-    if(!employments.Company || employments.Company.length < 1 ) return;
+    if(!employments.company || employments.company.length < 1 ) return;
     this.resetEmployment();
-    for (let i = 0; i < employments.Company.length; i++) {
-      this.addEmployementInfo(employments.Company[i], employments.Role[i]);
+    for (let i = 0; i < employments.company.length; i++) {
+      this.addExperience(employments.company[i], employments.role[i]);
+    }
+  }
+
+  get experiences(): FormArray {
+    return <FormArray>this.profileForm.get('employmentInfo').get('experiences');
+  }
+
+  public addExperience(company: string, name: string): void {
+    this.experiences.push(this.createExperienceGroup(company, name));
+  }
+
+  public deleteExperience(index): void {
+    this.experiences.removeAt(index);
+  }
+
+  public deleteAllExperiences() {
+    for (let i = 0; i < this.experiences.length; i++) {
+      this.experiences.removeAt(this.experiences.length -1 - i);
     }
   }
 
   private resetEmployment() {
-    //this.Company.reset();
-    //this.Role.reset();
-    for (let i = 0; i < this.Company.length; i++) {
-      this.Company.removeAt(i);
-      this.Role.removeAt(i)
-    }
+    this.deleteAllExperiences();
+    this.experiences.reset();
   }
 
-  public addEmptyPosition(): void {
-    this.addEmployementInfo('', '');
+  public addEmptyExperience(): void {
+    this.addExperience('', '');
   }
 
-  private addEmployementInfo(company: string, name: string): void {
-    this.Company.push(this.builder.control(company));
-    this.Role.push(this.builder.control(name));
-  }
-
-  get Company(): FormArray {
-    return <FormArray> this.EmploymentInfo.get('Company');
-  }
-
-  get Role(): FormArray {
-    return <FormArray> this.EmploymentInfo.get('Role');
+  private createExperienceGroup(company: string, name: string): FormGroup {
+    return this.builder.group({
+      company : [company, Validators.required],
+      role: [name, Validators.required],
+    })
   }
 
   ngOnInit() {
-    this.ProfileForm.addControl('EmploymentInfo', this.EmploymentInfo);
+    this.profileForm.addControl('employmentInfo', this.employmentInfo);
+    this.addEmptyExperience();
   }
 
 }

@@ -10,12 +10,9 @@ import {IMenu} from "./dashboard.types";
 })
 export class DashboardComponent implements OnInit {
   public menus:IMenu[];
-  //public user:User;
   @select('user') public user;
   constructor(private service: DashboardService) {
     this.menus = this.service.getMenus();
-    //ToDo cleanup
-    //this.user = this.service.getUser();
   }
 
   ngOnInit() {

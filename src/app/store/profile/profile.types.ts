@@ -2,41 +2,41 @@
  * Created by maximedenoun on 2017-05-26.
  */
 export interface IProfile {
-  pending?: boolean;
-  GeneralInfo?: {
-    id?: 286,
+  pending?: boolean,
+  generalInfo?: {
+    id?: number,
     file?: string,
-    Email?: string,
-    Name?: string,
-    Surname?: string,
-    AllowImageUsage?: boolean,
-    Biography?: string
+    email?: string,
+    name?: string,
+    surname?: string,
+    allowImageUsage?: boolean,
+    biography?: string
   },
-  EmploymentInfo?: {
-    Company?: string[],
-    Role?: string[]
+  employmentInfo?: {
+    company?: string[],
+    role?: string[]
   },
-  Social?: {
-    Nationality?: string,
-    CityCountry?: string,
-    Phone?: string,
-    Website?: string,
-    Twitter?: string,
-    Facebook?: string,
-    Linkedin?: string,
-    Git?: string,
+  social?: {
+    nationality?: string,
+    cityCountry?: string,
+    phone?: string,
+    website?: string,
+    twitter?: string,
+    facebook?: string,
+    linkedIn?: string,
+    git?: string,
   },
-  Languages?: {
-    Primary?: string,
-    Secondary?: string,
-    Third?: string,
-    Fourth?: string
+  languages?: {
+    primary?: string,
+    secondary?: string,
+    third?: string,
+    fourth?: string
   },
-  CommunityInfo?: {
-    IsCommunityMember?: boolean,
-    Community?: string
+  communityInfo?: {
+    isCommunityMember?: boolean,
+    community?: string
   },
-  Agreement?: {
-    Agrees?: boolean,
+  agreement?: {
+    agrees?: boolean,
   }
 }

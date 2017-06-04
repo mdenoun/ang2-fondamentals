@@ -1,0 +1,43 @@
+<div [formGroup]="social">
+  <div class="row form-group">
+    <div class="col-md-6 col-sm-6">
+      <label>Nationality * </label><input placeholder="Select" type="text" class="form-control" formControlName="nationality" [value]="socialModel?.nationality">
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <label>Where are you based * </label><input placeholder="city - country" type="text" class="form-control"
+                                          formControlName="cityCountry" [value]="socialModel?.cityCountry">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12 col-sm-12">
+      <label>Phone * </label><input placeholder="It won't be displayed on your profile" type="text"
+                            class="form-control" formControlName="phone" [value]="socialModel?.phone">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12 col-sm-12">
+      <label>Website </label><input placeholder="http://www.something.com" type="text" class="form-control"
+                            formControlName="website" [value]="socialModel?.website">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-6 col-sm-6">
+      <label>Twitter </label><input placeholder="@Username" type="text" class="form-control"
+                            formControlName="twitter" [value]="socialModel?.twitter">
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <label>LinkedIn </label><input placeholder="include http://" type="text" class="form-control"
+                             formControlName="facebook" [value]="socialModel?.facebook">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-6 col-sm-6">
+      <label>Facebook </label><input placeholder="include http://" type="text" class="form-control"
+                             formControlName="linkedIn" [value]="socialModel?.linkedIn">
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <label>Github / BitBucket </label><input placeholder="include http://" type="text" class="form-control"
+                                       formControlName="git" [value]="socialModel?.git">
+    </div>
+  </div>
+</div>
