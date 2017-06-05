@@ -18,15 +18,9 @@ export class LanguageComponent implements OnInit {
       primary: ['', [
         Validators.required
       ]],
-      secondary: ['', [
-        Validators.required
-      ]],
-      third: ['', [
-        Validators.required
-      ]],
-      fourth: ['', [
-        Validators.required
-      ]]
+      secondary: [''],
+      third: [''],
+      fourth: ['']
     });
   }
 
@@ -34,9 +28,6 @@ export class LanguageComponent implements OnInit {
     this.profileForm.addControl('languages', this.languages);
   }
 
-  /*get languages(): FormGroup{
-    return <FormGroup> this.profileForm.get('languages');
-  }*/
   get primary(): FormControl{
     return <FormControl> this.languages.get('primary');
   }

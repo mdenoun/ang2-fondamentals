@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators, FormArray} from '@angular/forms';
+import {FormGroup, FormBuilder} from '@angular/forms';
 import {select} from "@angular-redux/store";
 import {ProfileService} from "./profile.service";
 
@@ -13,9 +13,6 @@ export class ProfileComponent implements OnInit {
   @select('user') public user;
   @select('profile') public profile;
   public profileForm: FormGroup;
-  public email:string;
-
-
 
   constructor(private builder: FormBuilder, private service:ProfileService) {
     this.user.subscribe((value) => {
@@ -30,21 +27,16 @@ export class ProfileComponent implements OnInit {
       }
     });*/
     this.profileForm = builder.group({
-      /*agreement: builder.group({
-        agrees: [false, [
-          Validators.required
-        ]]
-      })*/
     });
   }
 
-  private checkError(field) {
+  /*private checkError(field) {
     if(field.control.errors !== null) {
       console.group(`${field.label} errors`);
       console.log(field.control.errors);
       console.groupEnd();
     }
-  }
+  }*/
 
   public save() {
     /*this.checkError({control:this.name, label:'Name'});
@@ -52,8 +44,9 @@ export class ProfileComponent implements OnInit {
     this.checkError({control:this.allowImageUsage, label:'AllowImageUsage'});
     this.checkError({control:this.biography, label:'Biography'});*/
     /*this.checkError({control:this.agrees, label:'Agrees'});*/
+    //ToDo check for errors
     if(this.profileForm.valid) {
-      console.log(this.profileForm.value);
+      console.log(this.profileForm.value);//ToDo send PROFILE_SAVED action
     }
   }
 

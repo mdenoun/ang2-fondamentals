@@ -14,18 +14,24 @@ export class ProfileMock {
         allowImageUsage: true,
         biography: 'This is my biography'
       },
-      employmentInfo: {
-        company: ['Tech 500', 'Tech 501' ],
-        role: ['dev', 'public speaker']
-      },
+      employmentInfo: [
+        {
+          company: 'compA',
+          role: 'dev'
+        },
+        {
+          company: 'compB',
+          role: 'public speaker'
+        }
+      ],
       social: {
         nationality: 'Israeli',
         cityCountry: 'Ashdod - Israel',
         phone: '0506944081',
         website: 'www.harbo.com',
-        twitter: 'I don"t have twitter',
-        facebook: 'I don"t have FB',
-        linkedIn: 'I don"t have it',
+        twitter: '@mdenoun',
+        facebook: 'http://facebook.com/mdenoun',
+        linkedIn: 'http://linkedin.com/mdenoun',
         git: 'https://github.com/mdenoun',
       },
       languages: {

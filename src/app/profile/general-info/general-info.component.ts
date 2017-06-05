@@ -40,9 +40,6 @@ export class GeneralInfoComponent implements OnInit {
     this.profileForm.addControl('generalInfo', this.generalInfo);
   }
 
-  /*get generalInfo(): FormGroup{
-    return <FormGroup> this.profileForm.get('generalInfo');
-  }*/
   get name(): FormControl{
     return <FormControl> this.generalInfo.get('name');
   }

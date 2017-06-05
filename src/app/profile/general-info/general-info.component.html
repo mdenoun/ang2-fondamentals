@@ -13,15 +13,18 @@
         <div class="col-md-12 col-sm-12 col-xs-12 email">
           {{generalInfoModel?.email}}
         </div>
-        <!--br/-->
       </div>
       <div class="row form-group">
-        <div class="col-md-6 col-sm-6 col-xs-12"><label>Name *</label><input type="text" class="form-control"
-                                                                             placeholder="Name"
-                                                                             formControlName="name" [value]="generalInfoModel?.name"></div>
-        <div class="col-md-6 col-sm-6 col-xs-12"><label>Surname *</label><input type="text" class="form-control"
-                                                                                placeholder="Surname"
-                                                                                formControlName="surname" [value]="generalInfoModel?.surname"></div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <label>Name *</label>
+          <input type="text" class="form-control" placeholder="Name"
+                 formControlName="name" [value]="generalInfoModel?.name">
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <label>Surname *</label>
+          <input type="text" class="form-control" placeholder="Surname"
+                 formControlName="surname" [value]="generalInfoModel?.surname">
+        </div>
       </div>
       <div class="row form-group">
         <div class="col-md-12 col-sm-12 col-xs-12 checkbox-inline">
@@ -30,20 +33,15 @@
             <small class="form-text text-muted">You can use my picture to promote the event.*</small>
           </label>
         </div>
-        <br/>
       </div>
     </div>
-    <!--/div-->
   </div>
-
-  <div class="separator"></div>
 
   <div class="row form-group">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <label>Biography *</label>
       <textarea formControlName="biography" class="form-control" maxlength="600" name="biography" [value]="generalInfoModel?.biography"></textarea>
       <small class="form-text text-muted">600 characters max</small>
-      <br/>
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ export class ProfileMiddleware {
   middleware = store => next => action => {
     let profileReq = {
       getProfile(user:IAuthUser): Observable<boolean> {
-        return Observable.of(true).delay(3000).do(val => {
+        return Observable.of(true).delay(1000).do(val => {
           this.value = 'Success';
         });
       }
