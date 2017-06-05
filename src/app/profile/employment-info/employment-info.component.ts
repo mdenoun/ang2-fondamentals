@@ -25,10 +25,10 @@ export class EmploymentInfoComponent implements OnInit {
   }
 
   private updateEmploymentInfo(employments): void {
-    if(!employments.company || employments.company.length < 1 ) return;
+    if(!employments || employments.length < 1 ) return;
     this.resetEmployment();
-    for (let i = 0; i < employments.company.length; i++) {
-      this.addExperience(employments.company[i], employments.role[i]);
+    for (let i = 0; i < employments.length; i++) {
+      this.addExperience(employments[i].company, employments[i].role);
     }
   }
 

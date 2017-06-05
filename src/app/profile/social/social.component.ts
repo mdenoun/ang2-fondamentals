@@ -23,21 +23,11 @@ export class SocialComponent implements OnInit {
       phone: ['', [
         Validators.required
       ]],
-      website: ['', [
-        Validators.required
-      ]],
-      twitter: ['', [
-        Validators.required
-      ]],
-      facebook: ['', [
-        Validators.required
-      ]],
-      linkedIn: ['', [
-        Validators.required
-      ]],
-      git: ['', [
-        Validators.required
-      ]]
+      website: [''],
+      twitter: [''],
+      facebook: [''],
+      linkedIn: [''],
+      git: ['']
     });
   }
 
@@ -45,9 +35,6 @@ export class SocialComponent implements OnInit {
     this.profileForm.addControl('social', this.social);
   }
 
-  /*get social(): FormGroup{
-    return <FormGroup> this.profileForm.get('social');
-  }*/
   get nationality(): FormControl{
     return <FormControl> this.social.get('nationality');
   }

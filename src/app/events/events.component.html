@@ -1,3 +1,4 @@
-<p>
-  Angular 4 featuring events: in construction
-</p>
+<add-event (eventAdded)="addEvent($event)"></add-event>
+<hr>
+<!--h2 *ngIf="events | async">{{ events | async | json }}</h2-->
+<event-list [eventListModel]="(events | async).events?.events"></event-list>

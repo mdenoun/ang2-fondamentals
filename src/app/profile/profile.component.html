@@ -1,34 +1,18 @@
-<!--section id="profile"-->
-  <!--h2 *ngIf="user | async">{{ user | async | json }}</h2>
-  <h2 *ngIf="profile | async">{{ profile | async | json }}</h2-->
-  <form id="profile_form" [formGroup]="profileForm" (ngSubmit)="save()" class="form-group" novalidate>
-    <div class="container-fluid"><!--style="margin-left: -15px; margin-right:-15px"-->
-      <div><h1>Profile</h1></div>
-      <general-info [profileForm]="profileForm" [generalInfoModel]="(profile | async).profile.generalInfo"></general-info>
-      <div class="separator"></div>
-      <employment-info [profileForm]="profileForm" [employmentModel]="(profile | async).profile.employmentInfo"></employment-info>
-      <div class="separator"></div>
-      <social [profileForm]="profileForm" [socialModel]="(profile | async).profile.social"></social>
-      <div class="separator"></div>
-      <language [profileForm]="profileForm" [languagesModel]="(profile | async).profile.languages"></language>
-      <div class="separator"></div>
-      <community [profileForm]="profileForm" [communityModel]="(profile | async).profile.communityInfo"></community>
-      <div class="separator"></div>
-      <agreement [profileForm]="profileForm" [agreementModel]="(profile | async).profile.agreement"></agreement>
-
-        <!--div [formGroup]="agreement">
-          <div class="form-group">
-            <div class="row">
-              <div class="checkbox-inline col-sm-6"><input type="checkbox" formControlName="agrees" [checked]="(profile | async).profile.agreement?.agrees">
-                <small>I authorize Codemotion to send me information about the conference. *</small>
-              </div>
-              <div class="col-sm-6">
-                <button type="submit" class="btn btn-success pull-right">Apply</button>
-              </div>
-            </div>
-          </div>
-        </div>-->
-      <!--/div-->
-    </div>
-  </form>
-<!--/section-->
+<!--h2 *ngIf="user | async">{{ user | async | json }}</h2>
+<h2 *ngIf="profile | async">{{ profile | async | json }}</h2-->
+<form id="profile_form" [formGroup]="profileForm" (ngSubmit)="save()" class="form-group" novalidate>
+  <div class="container-fluid">
+    <div><h1>Profile</h1></div>
+    <general-info [profileForm]="profileForm" [generalInfoModel]="(profile | async).profile.generalInfo"></general-info>
+    <div class="separator"></div>
+    <employment-info [profileForm]="profileForm" [employmentModel]="(profile | async).profile.employmentInfo"></employment-info>
+    <div class="separator"></div>
+    <social [profileForm]="profileForm" [socialModel]="(profile | async).profile.social"></social>
+    <div class="separator"></div>
+    <language [profileForm]="profileForm" [languagesModel]="(profile | async).profile.languages"></language>
+    <div class="separator"></div>
+    <community [profileForm]="profileForm" [communityModel]="(profile | async).profile.communityInfo"></community>
+    <div class="separator"></div>
+    <agreement [profileForm]="profileForm" [agreementModel]="(profile | async).profile.agreement"></agreement>
+  </div>
+</form>

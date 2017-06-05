@@ -12,8 +12,8 @@ const routes:Routes = [
     children: [
       { path: '', redirectTo: '/dashboard/profile', pathMatch: 'full' },
       { path: 'profile', loadChildren: 'app/profile/profile.module#ProfileModule'},
-      { path: 'events', loadChildren: 'app/events/events.module#EventsModule'},/*
-      { path: 'directives', loadChildren: 'app/new-paper/new-paper.module#NewPaperModule'},
+      { path: 'events', loadChildren: 'app/events/events.module#EventsModule'},
+      { path: 'directives', loadChildren: 'app/messages/messages.module#MessagesModule'},/*
       { path: 'forms', loadChildren: 'app/password/password.module#PasswordModule'},
       { path: 'rxjs', loadChildren: 'app/password/password.module#PasswordModule'},*/
       { path: 'logout', redirectTo: '/login', pathMatch: 'full' },

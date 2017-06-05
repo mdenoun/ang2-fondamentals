@@ -14,22 +14,14 @@ export class CommunityComponent implements OnInit {
 
   constructor(private builder: FormBuilder) {
     this.communityInfo = builder.group({
-      isCommunityMember: [false, [
-        Validators.required
-      ]],
-      community: ['', [
-        Validators.required
-      ]]
+      isCommunityMember: [false],
+      community: ['']
     })
   }
 
   ngOnInit() {
     this.profileForm.addControl('communityInfo', this.communityInfo);
   }
-
-  /*get communityInfo(): FormGroup{
-    return <FormGroup> this.profileForm.get('communityInfo');
-  }*/
 
   get isCommunityMember(): FormControl{
     return <FormControl> this.communityInfo.get('isCommunityMember');

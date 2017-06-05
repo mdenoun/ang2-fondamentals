@@ -24,10 +24,6 @@ export class AgreementComponent implements OnInit {
     this.profileForm.addControl('agreement', this.agreement);
   }
 
-  /*get agreement(): FormGroup{
-    return <FormGroup> this.profileForm.get('agreement');
-  }*/
-
   get agrees(): FormControl{
     return <FormControl> this.agreement.get('agrees');
   }
