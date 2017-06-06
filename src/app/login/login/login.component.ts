@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from "@angular/core";
-import {LoginService} from "../login.service";
 import {FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ import {FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
 export class LoginComponent implements OnInit {
   @Input() loginForm:FormGroup;
 
-  constructor(private builder:FormBuilder, private service:LoginService) {
+  constructor(private builder:FormBuilder, private authService:AuthService) {
     this.loginForm = builder.group({
       usernameEmail: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(8)]]
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.checkError({control:this.password, label:'password'});
     if(this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.service.login(this.loginForm.value);
+      this.authService.login(this.loginForm.value);
     }
   }
 }

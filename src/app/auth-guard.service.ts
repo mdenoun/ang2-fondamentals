@@ -18,10 +18,10 @@ export class AuthGuardService implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.isLoggedIn) { return true; }
+    if (AuthService.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting
-    this.authService.redirectUrl = url;
+    AuthService.redirectUrl = url;
 
     // Create a dummy session id
     let sessionId = 123456789;
