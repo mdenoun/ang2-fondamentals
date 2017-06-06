@@ -11,8 +11,8 @@ import {CommonModule} from "@angular/common";
 @NgModule({
   imports: [
     CommonModule,
-    NavigationModule,
-    DashboardRouterModule
+    DashboardRouterModule,
+    NavigationModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
