@@ -9,4 +9,4 @@ import { NavigationComponent } from './navigation.component';
   declarations: [NavigationComponent],
   exports: [NavigationComponent]
 })
-export default class NavigationModule { }
+export class NavigationModule { }
