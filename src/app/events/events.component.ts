@@ -11,7 +11,7 @@ export class EventsComponent implements OnInit {
   @select('events') public events;
 
   constructor(private service:EventsService) {
-    this.service.retrieveEvents({});//ToDo value.user);
+    this.service.retrieveEvents({});
   }
 
   ngOnInit() {

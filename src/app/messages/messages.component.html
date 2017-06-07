@@ -1,3 +1,3 @@
-<p>
-  In construction
-</p>
+<div><h1>Messages</h1></div>
+<!--h2 *ngIf="messages | async">{{ messages | async | json }}</h2-->
+<msg-list [messages]="(messages | async).messages?.messages"></msg-list>
