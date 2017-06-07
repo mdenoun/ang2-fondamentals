@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {select} from "@angular-redux/store";
+import {MessagesService} from "./messages.service";
 
 @Component({
   selector: 'app-messages',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
+  @select('messages') public messages;
 
-  constructor() { }
+  constructor(private service:MessagesService) {
+    this.service.retrieveMessages({});
+  }
 
   ngOnInit() {
   }

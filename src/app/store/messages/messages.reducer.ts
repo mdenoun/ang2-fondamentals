@@ -9,15 +9,15 @@ import {IMessages} from "./messages.types";
 export function messagesReducer(lastState:IAppState=INITIAL_STATE, action:IPayloadAction<IMessages,any>):IAppState {
   switch(action.type) {
     case MessagesAction.MESSAGES:
-      return Object.assign({}, lastState, {events:{pending: true}});
+      return Object.assign({}, lastState, {messages:{pending: true}});
     case MessagesAction.MESSAGES_SUCCESS:
-      return Object.assign({}, lastState, {events:{...action.payload, pending: false}});
+      return Object.assign({}, lastState, {messages:{...action.payload, pending: false}});
     case MessagesAction.MESSAGES_ERROR:
-      return Object.assign({}, lastState, {events: null});
+      return Object.assign({}, lastState, {messages: null});
     case MessagesAction.MESSAGES_ADD:
-      return Object.assign({}, lastState, {events: {pending: true}});
+      return Object.assign({}, lastState, {messages: {pending: true}});
     case MessagesAction.MESSAGES_ADD_SUCCESS:
-      return Object.assign({}, lastState, {events: {...action.payload, pending: false}});
+      return Object.assign({}, lastState, {messages: {...action.payload, pending: false}});
 
     default:
       return lastState
